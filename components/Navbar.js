@@ -33,14 +33,14 @@ const Navbar = () => {
 
           <div id="dropdown" className={`z-10 ${showdropdown?"":"hidden"} absolute left-[145px] bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700`}>
               <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                <li>
-                  <Link href="/dashboard" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
+                <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                  <Link href="/dashboard" >Dashboard</Link>
                 </li>
-                <li>
-                  <Link href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Your Page</Link>
+                <li className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                  <Link href="#" >Your Page</Link>
                 </li>
-                <li>
-                  <Link onClick={()=>signOut()} href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</Link>
+                <li >
+                  <button onClick={()=> signOut() } className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer" >Sign out</button>
                 </li>
               </ul>
           </div></>
@@ -48,7 +48,7 @@ const Navbar = () => {
         
         {session && <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500
             hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800
-            font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={()=>{signOut}}>Logout</button>
+            font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" onClick={()=>{signOut()}}>Logout</button>
         }
 
         {!session && <Link href={"/login"}>
